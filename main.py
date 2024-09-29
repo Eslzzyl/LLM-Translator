@@ -6,10 +6,10 @@ import os
 agent_types = ["通用翻译", "学术翻译"]
 agent = Translator()
 
-target_languages = ["中文", "English"]
+target_languages = ["English", "中文"]
 
 if __name__ == "__main__":
-    with gr.Blocks(theme=gr.themes.Soft(text_size='lg'), title="AI Translator", fill_height=True) as demo:
+    with gr.Blocks(theme=gr.themes.Soft(text_size='lg'), title="LLM Translator", fill_height=True) as demo:
         with gr.Row():
             input_text = gr.Textbox(label="输入", lines=10, scale=1)
             output_text = gr.Textbox(label="结果", lines=10, scale=1)
