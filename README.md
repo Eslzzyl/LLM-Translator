@@ -11,6 +11,7 @@
     ```
 
 2. 安装依赖：
+    a. 使用 `conda` 和 `pip`：
     ```bash
     # 安装前，建议新建一个虚拟环境。
     conda create -n llmtranslator python=3.12 -y
@@ -18,16 +19,29 @@
     pip install -r requirements.txt
     ```
 
-3. 配置环境变量：将 `start.sh`（或 `start.ps1`） 复制一份到 `start_private.sh`（或 `start_private.ps1`），并修改其中的环境变量值。
+    b. 使用 `uv`：
+
+        这一步可以跳过。
+
+3. 配置环境变量：在项目目录中新建一个 `.env` 文件，按照以下模板填入内容：
+    ```
+    OPENAI_API_KEY=""
+    OPENAI_API_BASE=""
+    OPENAI_MODEL=""
+    APP_PORT=3000
+    ```
 
 4. 运行：
-    ```bash
-    bash start_private.sh
-    ```
+    a. 使用 `conda` 和 `pip`：
 
-    或
-    ```powershell
-    .\start_private.ps1
-    ```
+        ```bash
+        python main.py
+        ```
+
+    b. 使用 `uv`：
+
+        ```bash
+        uv run main.py
+        ```
 
     然后打开终端中显示的链接。

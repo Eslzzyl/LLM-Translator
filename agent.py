@@ -3,7 +3,6 @@ from prompt import SYSTEM_PROMPT_GENERAL_TRANSLATOR, SYSTEM_PROMPT_ACADEMIC_TRAN
 from openai import OpenAI
 
 
-
 class Translator:
     def __init__(self):
         # 从环境变量获取 OPENAI_API_KEY 和 OPENAI_API_BASE

@@ -2,6 +2,10 @@ import gradio as gr
 from agent import Translator
 import pyperclip
 import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 agent_types = ["通用翻译", "学术翻译"]
 agent = Translator()
@@ -40,4 +44,7 @@ if __name__ == "__main__":
         clear_button.click(fn=lambda: "", inputs=None, outputs=input_text)
 
     # 运行
-    demo.launch()
+    if os.getenv("APP_PORT") is not None:
+        demo.launch(server_port=int(os.getenv("APP_PORT")))
+    else:
+        demo.launch()
