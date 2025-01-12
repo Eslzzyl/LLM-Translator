@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
+os.environ["NO_PROXY"] = "127.0.0.1"
 
 agent_types = ["通用翻译", "学术翻译"]
 agent = Translator()
